@@ -4,6 +4,7 @@ import * as bootstrap from 'bootstrap';
 import '@popperjs/core';
 import "./jokeFacade"
 import jokeFacade from "./jokeFacade"
+import data from "bootstrap/js/src/dom/data";
 
 document.getElementById("all-content").style.display = "block"
 
@@ -12,6 +13,20 @@ document.getElementById("all-content").style.display = "block"
 */
 
 /* JS For Exercise-1 below */
+
+function fetchAllPersons() {
+  let url = 'https://abefisk.dk/ca/api/ca/all-persons';
+  fetch(url)
+      .then(res => res.json())
+      .then(data => {
+        let  allPersonDiv = document.getElementById("all_persons");
+        allPersonDiv.innerHTML = data;
+      })
+}
+
+let editModalElement = document.getElementById("editmodal")
+let  editModal = new bootstrap.Modal(editModalElement)
+document.getElementById("editbtn").addEventListener('click', e => editModal.toggle())
 
 
 /* JS For Exercise-2 below */
