@@ -15,7 +15,7 @@
   -->
   <div id="all-content" style="display: none;">
     <ul id="menu" class="header">
-      <li><a href="" id="about">Test</a></li>
+      <li><a href="" id="about">All Zipcodes</a></li>
       <li><a href="" id="ex1">Person</a></li>
       <li><a href="" id="ex2">Hobbies</a></li>
       <li><a href="" id="ex3">Addresses</a></li>
@@ -32,33 +32,16 @@
           <thead>
           <tr>
             <th scope="col">#</th>
-            <th scope="col">First Name</th>
-            <th scope="col">Last Name</th>
-            <th scope="col">Id</th>
+            <th scope="col">First name</th>
+            <th scope="col">Last name</th>
+            <th scope="col">Phone</th>
+            <th scope="col">Email</th>
+            <th scope="col">Hobby</th>
             <th></th>
           </tr>
           </thead>
-          <tbody>
-          <tr>
-            <th scope="row">1</th>
-            <td>Mark</td>
-            <td>Otto</td>
-            <td>@mdo</td>
-            <td><input id="editbtn" type="button" value="Edit"/></td>
-          </tr>
-          <tr>
-            <th scope="row">2</th>
-            <td>Jacob</td>
-            <td>Thornton</td>
-            <td>@fat</td>
-            <td><input id="editbtn" type="button" value="Edit"/></td>
-          </tr>
-          <tr>
-            <th scope="row">3</th>
-            <td colspan="2">Larry the Bird</td>
-            <td>@twitter</td>
-            <td><input id="editbtn" type="button" value="Edit"/></td>
-          </tr>
+          <tbody id="tables">
+
           </tbody>
         </table>
 
@@ -138,8 +121,20 @@
     </div>
 
     <div id="about_html" style="display:none;">
-      <h3>About</h3>
-      <p>Watch the small video given as intro to this code, BEFORE you start using it</p>
+      <h3>Liste over alle ZipCodes</h3>
+
+      <table id="allZipCodes" class="table table-striped">
+        <thead>
+        <tr>
+          <th scope="col">ZipCode</th>
+          <th scope="col">City</th>
+          <th></th>
+        </tr>
+        </thead>
+        <tbody id="allZipCodes1">
+        </tbody>
+      </table>
+
     </div>
     <!-- End of HTML for ABOUT Page -->
 
