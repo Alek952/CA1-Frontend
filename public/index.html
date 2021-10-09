@@ -70,9 +70,33 @@
 
       <!-- This is were you should place your basic HTML for exercise-2 -->
       <div id="ex2_html" style="display:none;">
-        <h3>Exercise 2</h3>
-        <p id="ex2p">Add your basic HTML for Exercise 2 here</p>
-      </div>
+        <h3>Søg efter personer med en bestemt hobby</h3>
+          <form>
+            <div class="form-group row" style="margin-top: 25px;">
+              <label for="hobby_name" class="col-sm-2 col-form-label">Hobby navn</label>
+              <div class="col-sm-8">
+                <input class="form-control" id="hobby_name">
+              </div>
+              <button id="hobby_name_submit_button" type="submit" class="btn btn-primary col-sm-2">Søg</button>
+            </div>
+          </form>
+          <table class="table">
+            <thead>
+            <tr>
+              <th scope="col">#</th>
+              <th scope="col">First name</th>
+              <th scope="col">Last name</th>
+              <th scope="col">Phone</th>
+              <th scope="col">Email</th>
+              <th scope="col">Hobby</th>
+              <th></th>
+            </tr>
+            </thead>
+            <tbody id="person_by_hobby_body"></tbody>
+          </table>
+
+        </div>
+
       <!-- End of HTML for exercise-2 -->
 
 

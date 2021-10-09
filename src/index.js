@@ -126,8 +126,7 @@ function hideAllShowOne(idToShow) {
 function menuItemClicked(evt) {
     const id = evt.target.id;
     switch (id) {
-        case "ex1":
-            hideAllShowOne("ex1_html");getAllPersons();break
+        case "ex1":hideAllShowOne("ex1_html");getAllPersons();break
         case "ex2":hideAllShowOne("ex2_html");break
         case "ex3":hideAllShowOne("ex3_html");break
         default: hideAllShowOne("about_html");getAllZipcode();break
@@ -135,7 +134,56 @@ function menuItemClicked(evt) {
     evt.preventDefault();
 }
 
+function submitAction(evt) {
+    const id = evt.target.id;
+    switch (id) {
+        case "hobby_name_submit_button":
+            displayPersonByData("get_person_by_hobby");
+            break;
+    }
+    evt.preventDefault();
+}
+
+function displayPersonByData(type) {
+    let input_block;
+    let url;
+    switch (type) {
+        case "get_person_by_phone":
+            input_block = document.getElementById("person_by_phone_body");
+            url = `https://abefisk.dk/ca/api/ca/person_by_number/` + document.getElementById("phone_number").value;
+            break;
+        case "get_person_by_hobby":
+            input_block = document.getElementById("person_by_hobby_body");
+            url = `https://abefisk.dk/ca/api/ca/person_by_hobby/` + document.getElementById("hobby_name").value;
+            break;
+        case "get_all_persons":
+            input_block = document.getElementById("person_input");
+            url = `https://abefisk.dk/ca/api/ca/all_persons`;
+            break;
+        case "get_person_by_zipcode":
+            input_block = document.getElementById("person_by_zipcode_body");
+            url = `https://abefisk.dk/ca/api/ca/person_by_city/` + document.getElementById("zipcode").value;
+            break
+    }
+
+    fetch(url)
+        .then(handleHttpErrors)
+        .then(data =>
+        {
+            const allRows = data.map(n => getPersonTableRow(n));
+            input_block.innerHTML = allRows;
+        })
+        .catch(err => {
+            if (err.status) {
+                err.fullError.then(e => console.log(e.msg))
+            } else {
+                console.log(err);
+            }
+        });
+}
+
 document.getElementById("menu").onclick = menuItemClicked;
+document.getElementById("hobby_name_submit_button").onclick = submitAction;
 hideAllShowOne("about_html");
 
 

@@ -3,6 +3,11 @@ This is the Horizontal Navigation Bar Example with Active/Current Navigation Lin
 From here https://www.w3schools.com/css/css_navbar.asp
 */
 
+#ex2_html input{
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
 ul.header {
   list-style-type: none;
   margin: 0;
