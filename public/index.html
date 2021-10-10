@@ -31,12 +31,12 @@
         <table id="persons" class="table table-striped">
           <thead>
           <tr>
-            <th scope="col">#</th>
-            <th scope="col">First name</th>
-            <th scope="col">Last name</th>
-            <th scope="col">Phone</th>
-            <th scope="col">Email</th>
-            <th scope="col">Hobby</th>
+            <th>#</th>
+            <th>First name</th>
+            <th>Last name</th>
+            <th>Phone</th>
+            <th>Email</th>
+            <th>Hobby</th>
             <th></th>
           </tr>
           </thead>
@@ -49,19 +49,47 @@
           <div class="modal-dialog">
             <div class="modal-content">
               <div class="modal-header">
-                <h5 class="modal-title">Modal title</h5>
+                <h5 class="modal-title">Edit person</h5>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
               </div>
               <div class="modal-body">
-                <p>Modal body text goes here.</p>
+                <p>Please edit fields and press Save changes</p>
+
+                <div class="form-group">
+                  <label for="edit_id">ID</label>
+                  <input id="edit_id" name="id" type="text" class="form-control" />
+                </div>
+                <div class="form-group">
+                  <label for="fName">First name</label>
+                  <input type="text" id="fName" name="fName" class="form-control"></input>
+                </div>
+                <div class="form-group">
+                  <label for="lName" name="lName">Last name</label>
+                  <input type="text" id="lName" name="lName" class="form-control"></input>
+                </div>
+                <div class="form-group">
+                  <label for="phone">Phone</label>
+                  <input type="text" id="phone" name="phone" class="form-control"></input>
+                </div>
+                <div class="form-group">
+                  <label for="Email">Email</label>
+                  <input type="text" id="Email" name="Email" class="form-control"></input>
+                </div>
+                <div class="form-group">
+                  <label for="Hobby">Hobby</label>
+                  <input type="text" id="Hobby" name="Hobby" class="form-control"></input>
+                </div>
+
               </div>
               <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                <button type="button" class="btn btn-primary">Save changes</button>
+                <button id="modal-edit-save-btn" type="button" class="btn btn-primary">Save changes</button>
               </div>
             </div>
           </div>
         </div>
+
+
 
       </div>
       <!-- End of HTML for exercise-1 -->
